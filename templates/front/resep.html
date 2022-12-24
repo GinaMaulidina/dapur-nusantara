@@ -1,0 +1,32 @@
+{% extends 'front/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<tittle>This page is being repaired</title>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<section class="py-0">
+    <div class="container">
+      
+        {% for r in resep %}
+        <div class="card">
+          {% if r.thumb %}
+          <img src="{{ r.thumb }}" class="card-img-top" alt="rover">
+          {% else %}
+          <img src="https://www.astronauts.id/blog/wp-content/uploads/2022/08/Makanan-Khas-Daerah-tiap-Provinsi-di-Indonesia-Serta-Daerah-Asalnya.jpg" class="card-img-top" alt="rover">
+
+          {% endif %}
+            <div class="card-body">
+              <p><b>{{ r.title }}</b></p>
+              <p>Durasi : {{ r.times }}</p>
+
+            
+              
+              {% comment %} <a href="{% url 'resep_detil' d.key %}" class="getstarted">Read More</a> {% endcomment %}
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+<!-- end of .container-->
+</section> 
+{% endblock content %}
